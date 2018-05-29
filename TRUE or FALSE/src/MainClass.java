@@ -1,6 +1,4 @@
-/**
- * Created by User on 26.04.2017.
- */
+
 import java.util.Random;
 import java.util.Scanner;
 
