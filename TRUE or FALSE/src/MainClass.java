@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class MainClass {
-    public static String[][] questions= new String[100][2];
+    public static String[][] questions= new String[62][2];
     public static Random rand = new Random();
     public static int points = 0;
     public static int life = 5;
@@ -28,7 +28,7 @@ public class MainClass {
         int[] randoms = new int[25];
 
         Random rn = new Random();
-        int nmqdb = 99;
+        int nmqdb = 61;
         int randomed = rn.nextInt(nmqdb);
         questsret[0] = questions[randomed];
         randoms[0] = randomed;
