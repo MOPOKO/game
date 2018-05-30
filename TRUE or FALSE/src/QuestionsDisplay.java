@@ -34,12 +34,12 @@ public class QuestionsDisplay {
                 if (checker(c - 1,true)){
                     answered[c - 1] = true;
                     display.points++;
-                    displayMessage("Good job. You were Right! Your score: " + display.points, false);
+                    displayMessage("Right! Your score: " + display.points, false);
                 }
                 else {
                     answered[c - 1] = false;
                     display.life--;
-                    displayMessage("Don't worry. You were wrong! Your life: " + display.life, false);
+                    displayMessage("Wrong! Your life: " + display.life, false);
                 }
                 updateScreen();
                 nextQuestion(false);
@@ -51,12 +51,12 @@ public class QuestionsDisplay {
                 if (checker(c - 1,false)){
                     display.points++;
                     answered[c - 1] = true;
-                    displayMessage("Good job. You were Right! Your score: " + display.points, false);
+                    displayMessage("Right! Your score: " + display.points, false);
                 }
                 else {
                     answered[c - 1] = false;
                     display.life--;
-                    displayMessage("Don't worry. You were wrong! Your life: " + display.life, false);
+                    displayMessage("Wrong! Your life: " + display.life, false);
                 }
                 updateScreen();
                 nextQuestion(false);
@@ -105,8 +105,8 @@ public class QuestionsDisplay {
             for(boolean f: answered){
                 if (f) d++;
             }
-            JOptionPane.showMessageDialog(null, "Game Over! " + "You lose the game. You have answered: " + d + " of " + "25" + " Your life left: " + display.life + ".      Good Bye!");
-            displayMessage("Game Over! " + "You lose the game. You have answered: " + d + " of " + "25"+ " Your life left: " + display.life + ".      Good Bye!", true);
+            JOptionPane.showMessageDialog(null, "Game Over! " + "You lose the game. You have answered: " + d + " of " + "25.");
+            displayMessage("To start a new game, press RESTART button", true);
         }
         if(c < 25){
             if (isStart){
@@ -125,8 +125,8 @@ public class QuestionsDisplay {
             for(boolean f: answered){
                 if (f) d++;
             }
-            JOptionPane.showMessageDialog(null, "Game Over! " + "You won the game. You have answered: " + d + " of " + answered.length + " Your life left: " + display.life + ".      Good Bye!");
-            displayMessage("Game Over! " + "You lose the game. You have answered: " + d + " of " + answered.length + " Your life left: " + display.life + ".      Good Bye! if you don't want to continue", true);
+            JOptionPane.showMessageDialog(null, "Game Over! " + "You won the game. You have answered: " + d + " of " + "25.");
+            displayMessage("To start a new game, press RESTART button", true);
 
         }
     }
@@ -156,7 +156,7 @@ public class QuestionsDisplay {
             nextQuestion(false);
             updateScreen();
             clock.pause();
-            displayMessage("Don't worry. Your life: " + display.life, false);
+            displayMessage("Time is up. Your life: " + display.life, false);
             clock = new myTimer(QuestionsDisplay.this, 20);
         }
         else{
@@ -164,7 +164,7 @@ public class QuestionsDisplay {
             for(boolean f: answered){
                 if (f) d++;
             }
-            JOptionPane.showMessageDialog(null, "Game Over! " + " You have answered: " + d + " of " + answered.length + " Your life left: " + display.life + ".      Good Bye!");
+            JOptionPane.showMessageDialog(null, "Game Over! " + " You have answered: " + d + " of " + "25.");
             System.exit(0);
         }
     }
@@ -190,14 +190,14 @@ public class QuestionsDisplay {
         question.setBounds(50,50,500,250);
         question.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         question.setForeground(Color.blue);
-        question.setBackground(Color.lightGray);
+        question.setBackground(Color.white);
         question.setOpaque(true);
 
         time.setText(Integer.toString(times));
         time.setBounds(270,10,50,30);
 
         trueButton.setBounds(180,350,100, 30);
-        trueButton.setForeground(Color.yellow);
+        trueButton.setForeground(Color.green);
 
         falseButton.setBounds(350,350,100, 30);
         falseButton.setForeground(Color.red);
